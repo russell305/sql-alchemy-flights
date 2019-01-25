@@ -1,0 +1,21 @@
+{%extends "layout.html"%}
+
+{% block heading %}
+	Hello
+{% endblock %}
+
+{% block body %}
+
+
+	<ul>
+      {% for book in books %}
+          <li>
+            
+                  {{ book.title }} by {{ book.author }}
+             
+                  
+             
+          </li>
+      {% endfor %}
+  </ul>
+{% endblock %}

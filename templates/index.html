@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> My webpage </title>
+		
+		<link rel="stylesheet" href = "style.css" >
+		<script src="https://unpkg.com/eva-icons"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+			img {
+				width: 20%;
+				height:20%;
+				margin-top: 400px;
+			}
+			.form-group{
+				margin: 40px;
+			}
+
+		
+		</style>
+	</head>
+	<body>
+		<form action="{{ url_for('book_flight') }}" method="post">
+
+			<div class="form-group">
+				<select class="form-control" name="flight_id">
+					{% for flight in flights %}
+						<option value="{{ flight.id }}">{{ flight.orig }}{{ flight.origin }} to {{ flight.destination }}</option>
+					{% endfor %}
+				</select>
+			</div>
+
+			<div class="form-group">
+				<input class="form-control" name="name" placeholder="Passenger Name">
+			</div>
+		
+			<div class="form-group">
+				<button class="btn btn-primary">Book Flight</button>
+			</div>
+
+		</form>				
+						
+
+		
+
+	</body>
+</html>
